@@ -8,8 +8,24 @@
 #import "native_orgin_toast-Swift.h"
 #endif
 
+#import "NativeOrginToastHUD.h"
 @implementation NativeOrginToastPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
-  [SwiftNativeOrginToastPlugin registerWithRegistrar:registrar];
+    FlutterMethodChannel* channel = [FlutterMethodChannel methodChannelWithName:@"native_orgin_toast" binaryMessenger:[registrar messenger]];
+       
+    NativeOrginToastPlugin* instance = [[NativeOrginToastPlugin alloc] init];
+       [registrar addMethodCallDelegate:instance channel:channel];
+//  [SwiftNativeOrginToastPlugin regi   sterWithRegistrar:registrar];
+}
+
+- (void)handleMethodCall:(FlutterMethodCall *)call result:(FlutterResult)result {
+    
+//    [self logMessage:@"handle" details:call.method];
+    
+    if ([call.method isEqual:@"getPlatformVersion"]) {
+        
+    } else if ([call.method isEqual:@"showAgreeToast"]) {
+        [NativeOrginToastHUD showAgreeToast];
+    }
 }
 @end
