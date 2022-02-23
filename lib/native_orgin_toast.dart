@@ -18,7 +18,7 @@ class NativeOrginToast {
   }
 
   /// 弹出 Toast
-  static Future<void> showTextToast({required String message}) async {
+  static Future<void> showTextToast(String message) async {
     await _channel.invokeMethod("showTextToast", message);
   }
 }
