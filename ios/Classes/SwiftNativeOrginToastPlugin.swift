@@ -14,8 +14,9 @@ public class SwiftNativeOrginToastPlugin: NSObject, FlutterPlugin {
       result("iOS " + UIDevice.current.systemVersion)
     } else if call.method == "showAgreeToast" {
         SVProgressHUD.setDefaultStyle(.dark)
+        SVProgressHUD.setInfoImage(UIImage())
         SVProgressHUD.showInfo(withStatus: "请勾选同意后再登录")
-        SVProgressHUD.dismiss(withDelay: 3.0)
+        SVProgressHUD.dismiss(withDelay: 2.5)
     }
   }
 }
