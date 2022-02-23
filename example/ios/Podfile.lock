@@ -1,0 +1,29 @@
+PODS:
+  - Flutter (1.0.0)
+  - native_orgin_toast (0.0.1):
+    - Flutter
+    - SVProgressHUD
+  - SVProgressHUD (2.2.5)
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - native_orgin_toast (from `.symlinks/plugins/native_orgin_toast/ios`)
+
+SPEC REPOS:
+  trunk:
+    - SVProgressHUD
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  native_orgin_toast:
+    :path: ".symlinks/plugins/native_orgin_toast/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
+  native_orgin_toast: 19c3d7964df31ce723fc259400026b752d988ab7
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+
+PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+
+COCOAPODS: 1.10.1
