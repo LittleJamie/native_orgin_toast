@@ -16,4 +16,9 @@ class NativeOrginToast {
   static Future<void> showAgreeToast() async {
     await _channel.invokeMethod("showAgreeToast");
   }
+
+  /// 弹出 Toast
+  static Future<void> showTextToast({required String message}) async {
+    await _channel.invokeMethod("showTextToast", message);
+  }
 }
