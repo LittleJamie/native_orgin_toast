@@ -23,8 +23,19 @@ class NativeOrginToastPlugin: FlutterPlugin, MethodCallHandler {
   }
 
   override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
+
     if (call.method == "getPlatformVersion") {
       result.success("Android ${android.os.Build.VERSION.RELEASE}")
+    } else if (call.method == "showTextToast") {
+      Toast mToast = Toast.makeText(context, call.argument, Toast.LENGTH_SHORT);
+      mToast.setText(call.argument);
+      mToast.setGravity(Gravity.CENTER, 0, 0);
+      mToast.show();
+    } else if (call.method == "showArgeeToast") {
+      Toast mToast = Toast.makeText(context, "请勾选同意后再登录", Toast.LENGTH_SHORT);
+      mToast.setText("请勾选同意后再登录");
+      mToast.setGravity(Gravity.CENTER, 0, 0);
+      mToast.show();
     } else {
       result.notImplemented()
     }
