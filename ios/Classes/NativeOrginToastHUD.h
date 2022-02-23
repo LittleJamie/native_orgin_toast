@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NativeOrginToastHUD : NSObject
 
 + (void)showAgreeToast;
-
++ (void)showTextToast:(NSString *)message;
 @end
 
 NS_ASSUME_NONNULL_END

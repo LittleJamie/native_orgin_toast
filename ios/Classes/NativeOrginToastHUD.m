@@ -14,4 +14,10 @@
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
     [SVProgressHUD dismissWithDelay:2.5];
 }
+
++ (void)showTextToast:(NSString *)message {
+    [SVProgressHUD showImage:[UIImage imageNamed:@""] status:message];
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    [SVProgressHUD dismissWithDelay:2.5];
+}
 @end

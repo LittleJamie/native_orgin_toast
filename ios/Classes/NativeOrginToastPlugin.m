@@ -26,6 +26,8 @@
         
     } else if ([call.method isEqual:@"showAgreeToast"]) {
         [NativeOrginToastHUD showAgreeToast];
+    } else if ([call.method isEqual:@"showTextToast"]) {
+        [NativeOrginToastHUD showTextToast:call.arguments];
     }
 }
 @end
