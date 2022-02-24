@@ -16,8 +16,10 @@ class NativeOrginToastPlugin: FlutterPlugin, MethodCallHandler {
   /// This local reference serves to register the plugin with the Flutter Engine and unregister it
   /// when the Flutter Engine is detached from the Activity
   private lateinit var channel : MethodChannel
+  private lateinit var context: Context
 
   override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
+    context = flutterPluginBinding.applicationContext
     channel = MethodChannel(flutterPluginBinding.binaryMessenger, "native_orgin_toast")
     channel.setMethodCallHandler(this)
   }
@@ -27,15 +29,17 @@ class NativeOrginToastPlugin: FlutterPlugin, MethodCallHandler {
     if (call.method == "getPlatformVersion") {
       result.success("Android ${android.os.Build.VERSION.RELEASE}")
     } else if (call.method == "showTextToast") {
-      Toast mToast = Toast.makeText(context, call.argument, Toast.LENGTH_SHORT);
-      mToast.setText(call.argument);
-      mToast.setGravity(Gravity.CENTER, 0, 0);
-      mToast.show();
+      Toast.makeText(
+                context,
+                call.argument("message"),
+                if (call.argument<Int>("duration") == 1) Toast.LENGTH_LONG else Toast.LENGTH_SHORT
+            ).show()
     } else if (call.method == "showArgeeToast") {
-      Toast mToast = Toast.makeText(context, "请勾选同意后再登录", Toast.LENGTH_SHORT);
-      mToast.setText("请勾选同意后再登录");
-      mToast.setGravity(Gravity.CENTER, 0, 0);
-      mToast.show();
+      Toast.makeText(
+                context,
+                call.argument("请勾选同意后再登录"),
+                if (call.argument<Int>("duration") == 1) Toast.LENGTH_LONG else Toast.LENGTH_SHORT
+            ).show()
     } else {
       result.notImplemented()
     }
