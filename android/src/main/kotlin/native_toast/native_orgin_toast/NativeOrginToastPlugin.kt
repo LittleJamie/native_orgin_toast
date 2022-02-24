@@ -1,5 +1,8 @@
 package native_toast.native_orgin_toast
 
+import android.app.Activity
+import android.content.Context
+import android.widget.Toast
 import androidx.annotation.NonNull
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin
