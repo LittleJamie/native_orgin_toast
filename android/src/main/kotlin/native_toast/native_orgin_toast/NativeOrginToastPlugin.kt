@@ -34,14 +34,14 @@ class NativeOrginToastPlugin: FlutterPlugin, MethodCallHandler {
     } else if (call.method == "showTextToast") {
       Toast.makeText(
                 context,
-                call.argument("message"),
-                if (call.argument<Int>("duration") == 1) Toast.LENGTH_LONG else Toast.LENGTH_SHORT
+                call.argument,
+                Toast.LENGTH_SHORT
             ).show()
     } else if (call.method == "showArgeeToast") {
       Toast.makeText(
                 context,
-                call.argument("请勾选同意后再登录"),
-                if (call.argument<Int>("duration") == 1) Toast.LENGTH_LONG else Toast.LENGTH_SHORT
+                "请勾选同意后再登录",
+                  Toast.LENGTH_SHORT
             ).show()
     } else {
       result.notImplemented()
