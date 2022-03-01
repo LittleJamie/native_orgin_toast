@@ -1,4 +1,3 @@
-
 import 'dart:async';
 
 import 'package:flutter/services.dart';
@@ -19,6 +18,8 @@ class NativeOrginToast {
 
   /// 弹出 Toast
   static Future<void> showTextToast(String message) async {
-    await _channel.invokeMethod("showTextToast", message);
+    await _channel.invokeMethod("showTextToast", {
+      "message": message,
+    });
   }
 }

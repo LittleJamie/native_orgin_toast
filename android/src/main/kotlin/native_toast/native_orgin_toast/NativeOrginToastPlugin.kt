@@ -34,7 +34,7 @@ class NativeOrginToastPlugin: FlutterPlugin, MethodCallHandler {
     } else if (call.method == "showTextToast") {
       Toast.makeText(
                 context,
-                call.argument,
+                call.argument("message"),
                 Toast.LENGTH_SHORT
             ).show()
     } else if (call.method == "showArgeeToast") {
