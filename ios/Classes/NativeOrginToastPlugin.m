@@ -28,6 +28,11 @@
         [NativeOrginToastHUD showAgreeToast];
     } else if ([call.method isEqual:@"showTextToast"]) {
         [NativeOrginToastHUD showTextToast:call.arguments[@"message"]];
+    } else if ([call.method isEqual:@"showProgressTextToast"]) {
+        [NativeOrginToastHUD showProgressTextToast:call.arguments[@"message"]];
+    } else if ([call.method isEqual:@"dismissToast"]) {
+        [NativeOrginToastHUD dismissToast];
     }
+    
 }
 @end

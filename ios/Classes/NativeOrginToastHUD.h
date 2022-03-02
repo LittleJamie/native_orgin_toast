@@ -13,6 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)showAgreeToast;
 + (void)showTextToast:(NSString *)message;
++ (void)showProgressTextToast:(NSString *)message;
++ (void)dismissToast;
+
 @end
 
 NS_ASSUME_NONNULL_END

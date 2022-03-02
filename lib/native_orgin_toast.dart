@@ -22,4 +22,16 @@ class NativeOrginToast {
       "message": message,
     });
   }
+
+   /// 弹出 加载 Toast
+  static Future<void> showProgressTextToast(String message) async {
+    await _channel.invokeMethod("showProgressTextToast", {
+      "message": message,
+    });
+  }
+
+     /// 弹出 加载 Toast
+  static Future<void> dismissToast() async {
+    await _channel.invokeMethod("dismissToast");
+  }
 }

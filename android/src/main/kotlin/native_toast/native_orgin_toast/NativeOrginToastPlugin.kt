@@ -43,6 +43,20 @@ class NativeOrginToastPlugin: FlutterPlugin, MethodCallHandler {
                 "请勾选同意后再登录",
                   Toast.LENGTH_SHORT
             ).show()
+    } else if (call.method == "showProgressTextToast") {
+      Toast.makeText(
+                context,
+                "加载中...",
+                Toast.LENGTH_SHORT
+            ).show()
+    } else if (call.method == "showProgressTextToast") {
+      Toast.makeText(
+                context,
+                "加载中...",
+                Toast.LENGTH_SHORT
+            ).show()
+    } else if (call.method == "dismissToast") {
+    
     } else {
       result.notImplemented()
     }

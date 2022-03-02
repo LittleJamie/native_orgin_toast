@@ -20,4 +20,13 @@
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
     [SVProgressHUD dismissWithDelay:2.5];
 }
+
++ (void)showProgressTextToast:(NSString *)message {
+    [SVProgressHUD showWithStatus:message];
+}
+
++ (void)dismissToast {
+    [SVProgressHUD dismiss];
+}
+
 @end
