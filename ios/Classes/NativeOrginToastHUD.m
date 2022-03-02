@@ -22,6 +22,7 @@
 }
 
 + (void)showProgressTextToast:(NSString *)message {
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
     [SVProgressHUD showWithStatus:message];
 }
 
